@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parkersons HVAC — Site Audit Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Load Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="logo-wrapper">
+          <i class="fa-solid fa-gears logo-icon"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Parkersons Heating & Air</h1>
+          <p class="subtitle">Interactive SEO, UX & QA Audit Report</p>
+        </div>
+      </div>
+      <div class="meta-info">
+        <div class="meta-item">
+          <span class="label">Audited URL</span>
+          <a href="https://parkersons.vercel.app/" target="_blank" class="value">parkersons.vercel.app <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="meta-item">
+          <span class="label">Audit Date</span>
+          <span class="value">June 23, 2026</span>
+        </div>
+        <div class="meta-item">
+          <span class="label">Status</span>
+          <span class="badge badge-warning">Read-Only Audit</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Grid -->
+    <main class="main-content">
+      
+      <!-- Top Row: Overview Cards -->
+      <section class="stats-overview-grid">
+        <!-- Overall Score Card -->
+        <div class="card score-card">
+          <div class="card-header">
+            <h3>Overall Site Score</h3>
+            <span class="tooltip" title="Composite score calculated from all SEO, Performance, UX, and QA checklist items.">
+              <i class="fa-regular fa-circle-question"></i>
+            </span>
+          </div>
+          <div class="score-display-wrapper">
+            <div class="gauge-outer">
+              <svg viewBox="0 0 100 100" class="gauge-svg">
+                <circle cx="50" cy="50" r="42" class="gauge-bg"></circle>
+                <circle cx="50" cy="50" r="42" class="gauge-fill" id="overall-gauge-fill"></circle>
+              </svg>
+              <div class="gauge-value" id="overall-score-value">60</div>
+            </div>
+            <div class="gauge-desc">
+              <h4 id="score-rating">Needs Work</h4>
+              <p>Resolve critical and high issues to boost your score to 100.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Issue Summary Card -->
+        <div class="card summary-card">
+          <div class="card-header">
+            <h3>Findings Summary</h3>
+          </div>
+          <div class="summary-counters">
+            <div class="counter-item critical">
+              <span class="count" id="count-critical">3</span>
+              <span class="lbl">Critical</span>
+            </div>
+            <div class="counter-item high">
+              <span class="count" id="count-high">3</span>
+              <span class="lbl">High</span>
+            </div>
+            <div class="counter-item medium">
+              <span class="count" id="count-medium">4</span>
+              <span class="lbl">Medium</span>
+            </div>
+            <div class="counter-item low">
+              <span class="count" id="count-low">2</span>
+              <span class="lbl">Low</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress Tracker Card -->
+        <div class="card progress-tracker-card">
+          <div class="card-header">
+            <h3>Resolution Progress</h3>
+          </div>
+          <div class="progress-container">
+            <div class="progress-radial-wrapper">
+              <div class="progress-radial" id="tracker-percentage">0%</div>
+              <div class="progress-radial-sub">Issues Fixed</div>
+            </div>
+            <div class="progress-details">
+              <p class="fixed-ratio-text"><strong id="resolved-count">0</strong> of <strong id="total-count">12</strong> issues resolved</p>
+              <div class="progress-bar-outer">
+                <div class="progress-bar-inner" id="tracker-bar-fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Category Score Breakdown -->
+      <section class="section-title-wrapper">
+        <h2><i class="fa-solid fa-chart-simple"></i> Category Breakdown</h2>
+      </section>
+      <section class="categories-grid" id="categories-container">
+        <!-- Rendered dynamically by app.js -->
+      </section>
+
+      <!-- Main Audit Interface -->
+      <section class="section-title-wrapper">
+        <h2><i class="fa-solid fa-list-check"></i> Audit Checklist & Findings</h2>
+      </section>
+      
+      <div class="audit-interface-layout">
+        <!-- Sidebar Filters -->
+        <aside class="sidebar-filters">
+          <div class="filter-box">
+            <h3><i class="fa-solid fa-sliders"></i> Filter by Severity</h3>
+            <div class="filter-options" id="severity-filters">
+              <button class="filter-btn active" data-severity="all">All Severities</button>
+              <button class="filter-btn" data-severity="critical"><span class="dot dot-critical"></span> Critical</button>
+              <button class="filter-btn" data-severity="high"><span class="dot dot-high"></span> High</button>
+              <button class="filter-btn" data-severity="medium"><span class="dot dot-medium"></span> Medium</button>
+              <button class="filter-btn" data-severity="low"><span class="dot dot-low"></span> Low</button>
+              <button class="filter-btn" data-severity="pass"><span class="dot dot-pass"></span> Passed</button>
+            </div>
+          </div>
+
+          <div class="filter-box">
+            <h3><i class="fa-solid fa-user-gear"></i> Filter by Specialist</h3>
+            <div class="filter-options" id="specialist-filters">
+              <button class="filter-btn active" data-specialist="all">All Specialists</button>
+              <button class="filter-btn" data-specialist="scout"><i class="fa-solid fa-search"></i> Scout [SEO]</button>
+              <button class="filter-btn" data-specialist="blaze"><i class="fa-solid fa-bolt"></i> Blaze [Performance]</button>
+              <button class="filter-btn" data-specialist="aria"><i class="fa-solid fa-palette"></i> Aria [UI/UX]</button>
+              <button class="filter-btn" data-specialist="vega"><i class="fa-solid fa-vial"></i> Vega [QA]</button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Findings List -->
+        <div class="findings-list-wrapper">
+          <div class="search-bar-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="search-input" placeholder="Search findings, files, or keywords...">
+          </div>
+          <div class="findings-container" id="findings-container">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-layout">
+      <p>&copy; 2026 Parkersons Heating & Air Audit Dashboard. Generated by Antigravity Specialist Agents.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
