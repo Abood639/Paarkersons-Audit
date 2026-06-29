@@ -1,19 +1,26 @@
-# Transferring Antigravity Skills
+# Perfection Auto Detailing — Site Audit Dashboard
 
-Share these files with your friend to install the `site-audit` and `seo` skills on their system.
+This repository contains the interactive Site Audit Dashboard for [Perfection Auto Detailing](https://perfectionautodetaillv.com/).
+It was generated based on findings from four specialist AI agents (Aria, Blaze, Scout, and Vega).
 
-## Files to Share
+## Running Locally
 
-1. `antigravity-skills.zip` (contains all the skill files)
-2. `setup-skills.ps1` (installer script)
+To view the dashboard on your own machine:
 
-## Installation Instructions
+1. Clone this repository.
+2. Open a terminal in the repository folder.
+3. Start a local server (e.g., using Python or Node):
+   \`\`\`bash
+   python -m http.server 8080
+   # or
+   npx serve -p 8080
+   \`\`\`
+4. Open your browser and navigate to `http://localhost:8080`.
 
-Have your friend copy both files to their computer, open PowerShell in that folder, and run:
+## Deployment
 
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\setup-skills.ps1
-```
-
-The script will automatically unzip the skills to their user profile and update the path configurations for their system.
+This dashboard can be easily deployed to [Vercel](https://vercel.com/) via the included `vercel.json`.
+Just run:
+\`\`\`bash
+npx vercel --prod
+\`\`\`
